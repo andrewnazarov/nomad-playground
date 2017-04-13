@@ -20,7 +20,9 @@ advertise {
 client {
   # Enable client mode for the local agent
   enabled = true
-
+  options = {
+    "driver.raw_exec.enable" = "1"
+  }
   # Reserve a portion of the nodes resources
   # from being used by Nomad when placing tasks.
   # For example:

@@ -10,7 +10,7 @@ job "microbot" {
   }
 
   group "web" {
-    count = 3
+    count = 2
 
     task "microbot" {
       driver = "docker"
@@ -22,6 +22,7 @@ job "microbot" {
       }
       service {
         port = "http"
+        tags = ["urlprefix-/","urlprefix-microbot.service.consul/"]
         check {
           type = "http"
           path = "/"
