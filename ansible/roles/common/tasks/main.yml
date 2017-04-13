@@ -2,4 +2,13 @@
 - name: Install Required Packages
   apt: pkg="{{ item }}" state=installed update_cache=true
   with_items: "{{ required_packages }}"
+  
+- name: Create directory for configs
+  file:
+    path: /etc/dnsmasq.d
+    state: directory
+
+- name: Copy Config
+  copy: "src=10-consul dest=/etc/dnsmasq.d/ force=yes"
+  notify: Restart dnsmasq
     

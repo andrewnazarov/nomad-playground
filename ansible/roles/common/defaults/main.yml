@@ -7,3 +7,4 @@ required_packages:
   - wget
   - vim
   - python-pip
+  - dnsmasq
