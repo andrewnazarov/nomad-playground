@@ -16,18 +16,20 @@ job "tomcat" {
       driver = "docker"
       config {
         image = "tomcat:8.0"
+        volumes = [
+          "app/sample.war:/usr/local/tomcat/webapps/sample.war"
+        ]
         port_map = {
           http = 8080
         }
       }
      
       service {
-        name = "global-tomcat-check"
-        tags = ["global", "app"]
+        name = "tomcat"
+        tags = ["app"]
         port = "http"
         check {
           type = "tcp"
-
           interval = "10s"
           timeout = "2s"
           }

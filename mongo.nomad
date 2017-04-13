@@ -34,7 +34,7 @@ job "mongo" {
 
           resources {
                   cpu = 500 # 500 MHz
-                  memory = 128 # 128MB
+                  memory = 256 # 256MB
          network {
                   mbits = 10
                   port "db_m" {}
@@ -42,14 +42,13 @@ job "mongo" {
     }
 
             service {
-                 name = "global-mongodb-check"
-                 tags = ["global", "db_m"]
+                 name = "mongodb"
+                 tags = ["db_m"]
                  port = "db_m"
                  check {
-                      name = "alive"
                       type = "tcp"
                       interval = "10s"
-                      timeout = "2s"
+                      timeout = "4s"
              }
        }
 
