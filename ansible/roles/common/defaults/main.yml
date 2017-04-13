@@ -1,0 +1,9 @@
+---
+required_packages:
+  - unzip
+  - git
+  - jq
+  - curl
+  - wget
+  - vim
+  - python-pip

@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: vagrant
+  become: yes
+  roles:
+    - common
+    - docker
+    - consul
+    - nomad

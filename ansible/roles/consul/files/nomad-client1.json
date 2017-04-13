@@ -1,0 +1,16 @@
+{
+    "bootstrap": false,
+    "server": false,
+    "bind_addr": "10.100.200.101",
+    "advertise_addr": "10.100.200.101",
+    "datacenter": "dc1",
+    "data_dir": "/var/lib/consul",
+    "ui": true,
+    "log_level": "DEBUG",
+    "enable_syslog" : true,
+    "node_name": "nomad-client1",
+    "start_join": ["10.100.200.11"],
+    "retry_join": ["10.100.200.11"],
+    "retry_interval" : "15s",
+    "rejoin_after_leave": true
+}

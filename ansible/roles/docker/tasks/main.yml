@@ -1,0 +1,29 @@
+- name: Add Docker repository and update apt cache
+  apt_repository:
+    repo: deb https://apt.dockerproject.org/repo ubuntu-trusty main
+    update_cache: yes
+    state: present
+  tags: [docker]
+
+- name: Install Docker
+  apt:
+    name: docker-engine
+    state: latest
+    force: yes
+  tags: [docker]
+
+- name: Install Docker-py
+  pip: name=docker-py version=1.6.0 state=present
+  tags: [docker]
+
+- name: Install Docker Compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.11.1/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+  tags: [docker]
+
+- name: Set Docker Compose permissions
+  file:
+    path: /usr/local/bin/docker-compose
+    mode: 0755
+  tags: [docker]

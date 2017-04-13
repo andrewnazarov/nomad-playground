@@ -1,0 +1,37 @@
+---
+- name: Check if Nomad is already installed
+  stat: path=/usr/bin/nomad
+  register: nomad_installed
+  
+- name: Download Nomad archive
+  get_url: url={{ nomad_binary }} dest=/tmp/nomad.zip mode=0755
+  when: (nomad_installed.stat.exists == false)
+  
+- name: Unarchive Nomad binary
+  unarchive:
+    src: /tmp/nomad.zip
+    dest: /usr/bin
+    remote_src: true
+    mode: a+x
+  when: (nomad_installed.stat.exists == false)
+
+- name: Create directory for configs
+  file:
+    path: /etc/nomad.d
+    state: directory
+    mode: a+w
+  when: (nomad_installed.stat.exists == false)
+
+- name: Copy Config
+  copy: "src={{ ansible_hostname }}.hcl dest=/etc/nomad.d/nomad.json force=yes"
+  
+- name: Create logfile
+  file:
+    path: /var/log/nomad.log
+    state: touch
+    owner: root
+    group: root
+    mode: a+w
+
+- name: Start Nomad
+  shell: "nohup nomad agent -config /etc/nomad.d/nomad.json > /var/log/nomad.log 2>&1 &"

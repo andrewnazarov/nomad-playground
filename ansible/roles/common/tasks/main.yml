@@ -1,0 +1,5 @@
+---
+- name: Install Required Packages
+  apt: pkg="{{ item }}" state=installed update_cache=true
+  with_items: "{{ required_packages }}"
+    
