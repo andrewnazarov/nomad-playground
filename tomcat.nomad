@@ -26,7 +26,7 @@ job "tomcat" {
      
       service {
         name = "tomcat"
-        tags = ["app"]
+        tags = ["app","urlprefix-tomcat/","urlprefix-tomcat.service.consul/"]
         port = "http"
         check {
           type = "tcp"
