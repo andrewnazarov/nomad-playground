@@ -4,6 +4,8 @@
   become: yes
   roles:
     - common
+#    - firewall ---configuring firewall rules Not ready yet
     - docker
     - consul
     - nomad
+#    - deploy ---run Fabio as a Nomad job Not ready yet
