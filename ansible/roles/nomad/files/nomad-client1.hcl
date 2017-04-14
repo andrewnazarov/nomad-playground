@@ -20,6 +20,7 @@ advertise {
 client {
   # Enable client mode for the local agent
   enabled = true
+  network_interface = "eth1"
   options = {
     "driver.raw_exec.enable" = "1"
   }
