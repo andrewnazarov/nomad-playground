@@ -1,7 +1,6 @@
 job "fabio" {  
   datacenters = ["dc1"]
 
-  # run on every nomad node
   type = "system"
 
   update {
@@ -15,7 +14,6 @@ job "fabio" {
 
       config {
         command = "fabio-1.4.2-go1.8.1-linux_amd64"
-#        args = ["-proxy.addr=:80", "-ui.addr=:9999"]
       }
 
       artifact {

@@ -22,6 +22,7 @@ job "microbot" {
       }
       service {
         port = "http"
+        name = "microbot"
         tags = ["urlprefix-/","urlprefix-microbot.service.consul/"]
         check {
           type = "http"
