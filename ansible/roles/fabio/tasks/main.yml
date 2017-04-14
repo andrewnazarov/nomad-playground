@@ -1,4 +1,4 @@
-- name: Download Nomad archive
+- name: Download Fabio binary
   get_url: 
     url: "https://github.com/eBay/fabio/releases/download/v1.4.2/fabio-1.4.2-go1.8.1-linux_amd64"
     dest: /usr/bin/
@@ -15,6 +15,6 @@
     mode: a+w
   when: ansible_hostname == 'nomad-server1' 
 
-- name: Start Nomad
+- name: Start Fabio
   shell: "nohup fabio-1.4.2-go1.8.1-linux_amd64 > /var/log/fabio.log 2>&1 &"
   when: ansible_hostname == 'nomad-server1' 
