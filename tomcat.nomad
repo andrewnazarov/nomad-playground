@@ -17,7 +17,7 @@ job "tomcat" {
       config {
         image = "tomcat:8.0"
         volumes = [
-          "app/sample.war:/usr/local/tomcat/webapps/sample.war"
+          "/vagrant/app/:/usr/local/tomcat/webapps/"
         ]
         port_map = {
           http = 8080
