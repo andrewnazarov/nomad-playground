@@ -7,13 +7,13 @@ Just 'vagrant up' and you'll get working infrastructure to play with containers.
 I'm not sure it's good enough, but pretty sure it's raw enough. So feel free to contribute.
 
 Here we have:
-Vagrant to create VMs
-Ansible to provision our VMs
-Docker to run containers
-Consul to do service discovery
-Nomad to do scheduling and run jobs
-Fabio to do load balansing
-Dnsmasq to help resolving .service.consul requests
+* Vagrant to create VMs
+* Ansible to provision our VMs
+* Docker to run containers
+* Consul to do service discovery
+* Nomad to do scheduling and run jobs
+* Fabio to do load balansing
+* Dnsmasq to help resolving .service.consul requests
 
 This envinronment was created under the influence of the following:
 
@@ -65,10 +65,19 @@ or/and
 
 or/and
 
-Known bugs
----------
+   nomad run mongo.nomad
+   
+8. curl 10.100.200.101:9999 -H "Host: microbot.service.consul"
 
-curl tomcat.service.consul:9999/ returns a page from microbot. 
+or
+
+   curl 10.100.200.101:9999 -H "Host: tomcat.service.consul"
+   
+Known bugs
+----------------------
+
+Domain name fabio.service.consul points to virtualbox's ip address 10.0.2.15. 
+That way Fabio service registers itself in Consul.
 
 License
 ---------
