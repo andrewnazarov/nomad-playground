@@ -23,7 +23,7 @@ job "microbot" {
       service {
         port = "http"
         name = "microbot"
-        tags = ["urlprefix-microbot.service.consul/"]
+        tags = ["urlprefix-microbot.service.consul:9999/"]
         check {
           type = "http"
           path = "/"
