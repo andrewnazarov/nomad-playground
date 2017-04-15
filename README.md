@@ -67,11 +67,14 @@ or/and
 
    nomad run mongo.nomad
    
-8. curl 10.100.200.101:9999 -H "Host: microbot.service.consul"
+8. curl microbot.service.consul:9999 
 
 or
 
-   curl 10.100.200.101:9999 -H "Host: tomcat.service.consul"
+   curl tomcat.service.consul:9999/sample
+   
+or being at your host machine just point your favourite browser to http://microbot.service.consul:9999 or http://tomcat.service.consul:9999/sample
+(don't forget to change dns to 10.100.200.11 to be able to resolve .service.consul names).
    
 Known bugs
 ----------------------
