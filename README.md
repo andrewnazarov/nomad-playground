@@ -1,8 +1,6 @@
 nomad-playground
 =====
 
-!INCOMPLETE
-
 Just 'vagrant up' and you'll get working infrastructure to play with containers. 
 I'm not sure it's good enough, but pretty sure it's raw enough. So feel free to contribute.
 
@@ -14,6 +12,8 @@ Here we have:
 * Nomad to do scheduling and run jobs
 * Fabio to do load balansing
 * Dnsmasq to help resolving .service.consul requests
+
+![infra](https://github.com/andrewnazarov/nomad-playground/blob/master/Diag1.jpg)
 
 This envinronment was created under the influence of the following:
 
@@ -36,9 +36,9 @@ Requirements
 
 It seems to work on the following configuration of local machine:
 
-Virtualbox 4.3.36
-Vagrant 1.6.5
-Ansible 2.2.1.0
+* Virtualbox 4.3.36
+* Vagrant 1.6.5
+* Ansible 2.2.1.0
 
 Howto
 -----------------
