@@ -2,7 +2,7 @@ nomad-playground
 =====
 
 Just 'vagrant up' and you'll get working infrastructure to play with containers. 
-I'm not sure it's good enough, but pretty sure it's raw enough. So feel free to contribute.
+Feel free to contribute.
 
 Here we have:
 * Vagrant to create VMs
@@ -10,7 +10,7 @@ Here we have:
 * Docker to run containers
 * Consul to do service discovery
 * Nomad to do scheduling and run jobs
-* Fabio to do load balansing
+* Fabio to do load balancing
 * Dnsmasq to help resolving .service.consul requests
 
 ![infra](https://github.com/andrewnazarov/nomad-playground/blob/master/Diag1.jpg)
@@ -26,11 +26,6 @@ This envinronment was created under the influence of the following:
 
 I use a simple java app from here: https://github.com/hypergrid-inc/basic-docker-tomcat-example
  
-TODO
--------
-
-It's going to be a long list
-
 Requirements
 -----------------
 
