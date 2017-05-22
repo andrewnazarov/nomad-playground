@@ -22,11 +22,11 @@ job "mongo" {
              size = 300
           }
 
-         task "mongo" {
+         task "postgres" {
              driver = "docker"
 
              config {
-               image = "posgres"
+               image = "postgres"
                port_map {
                     db = 5432
              }
@@ -37,7 +37,7 @@ job "mongo" {
                   memory = 256 # 256MB
          network {
                   mbits = 10
-                  port "db_m" {}
+                  port "db_p" {}
            }
     }
 
