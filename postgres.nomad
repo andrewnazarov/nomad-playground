@@ -1,4 +1,4 @@
-job "mongo" {
+job "postgres" {
         datacenters = ["dc1"]
         type = "service"
 
